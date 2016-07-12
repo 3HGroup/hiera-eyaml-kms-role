@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'hiera/backend/eyaml/encryptors/kmsrole'
 
 Gem::Specification.new do |gem|
-  gem.name          = "hiera-eyaml-kms-role"
+  gem.name          = "hiera-eyaml-kmsrole"
   gem.version       = Hiera::Backend::Eyaml::Encryptors::KmsRole::VERSION
   gem.description   = "AWS KMS encryptor for use with hiera-eyaml with added assume IAM role based on https://github.com/adenot/hiera-eyaml-kms"
   gem.summary       = "KMS Encryption plugin for hiera-eyaml backend for Hiera"
