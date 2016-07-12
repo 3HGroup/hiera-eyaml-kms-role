@@ -27,7 +27,7 @@ class Hiera
           }
 
           VERSION = "0.1"
-          self.tag = "KMS"
+          self.tag = "KMSROLE"
 
           def self.encrypt plaintext
             aws_region = self.option :aws_region
