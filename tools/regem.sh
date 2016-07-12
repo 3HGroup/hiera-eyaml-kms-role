@@ -2,7 +2,7 @@
 
 set -e
 
-GEM_NAME="hiera-eyaml-kms"
+GEM_NAME="hiera-eyaml-kms-role"
 
 gem uninstall ${GEM_NAME} --executables
 RAKE_OUT=`rake build`

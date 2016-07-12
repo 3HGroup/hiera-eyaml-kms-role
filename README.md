@@ -1,9 +1,15 @@
-hiera-eyaml-kms
+hiera-eyaml-kms-role
 ===============
 
 This is a plugin encryptor for the hiera-eyaml project (hosted https://github.com/TomPoulton/hiera-eyaml/).
 
 *hiera-eyaml-kms encrypts and decrypts Hiera data using AWS KMS.*
+
+It now has added support to assume role if given in config.
+
+This gives more flexibility/control to secure KMS keys for pre exisiting resources that already have different roles.
+
+Also added the ability to set a profile to use. This allows editors to change profiles for different accounts etc
 
 AWS KMS is a service that encrypts and decrypts data through API calls. Permissions are controlled by IAM. [Read more about AWS KMS](http://docs.aws.amazon.com/kms/latest/developerguide/overview.html).
 
