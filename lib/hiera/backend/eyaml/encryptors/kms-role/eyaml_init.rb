@@ -1,3 +1,3 @@
 require 'hiera/backend/eyaml/encryptors/kms-role'
-
-Hiera::Backend::Eyaml::Encryptors::Kms.register
+puts "here"
+Hiera::Backend::Eyaml::Encryptors::KmsRole.register
