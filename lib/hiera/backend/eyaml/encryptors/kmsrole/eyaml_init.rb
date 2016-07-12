@@ -1,3 +1,3 @@
-require 'hiera/backend/eyaml/encryptors/kms-role'
+require 'hiera/backend/eyaml/encryptors/kmsrole'
 puts "here"
 Hiera::Backend::Eyaml::Encryptors::KmsRole.register
