@@ -26,7 +26,11 @@ class Hiera
                               :default => "ap-southeast-2" }
           }
 
-          VERSION = "0.1"
+          MAJOR = "0"
+          MINOR = "2"
+          BUILD = ENV["GEM_BUILD"] || "DEV"
+          VERSION = [MAJOR, MINOR, BUILD].join(".")
+
           self.tag = "KMSROLE"
 
           def self.encrypt plaintext
