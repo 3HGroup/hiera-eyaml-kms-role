@@ -42,13 +42,13 @@ class Hiera
 
             raise StandardError, "key_id is not defined" unless key_id
 
-            if !client_profile.empty?
-              credentials = Aws::SharedCredentials.new(profile_name: client_profile)
-            else
+            if client_profile.nil? || client_profile.empty?
               credentials = Aws::SharedCredentials.new()
+            else
+              credentials = Aws::SharedCredentials.new(profile_name: client_profile)
             end
 
-            if !iam_role.empty?
+            if ! (iam_role.nil? || iam_role.empty?)
               role_credentials = Aws::AssumeRoleCredentials.new(
                 client: Aws::STS::Client.new(region: aws_region, credentials: credentials),
                 role_arn: iam_role,
@@ -77,13 +77,13 @@ class Hiera
             iam_role = self.option :iam_role
 
 
-            if !client_profile.empty?
-              credentials = Aws::SharedCredentials.new(profile_name: client_profile)
-            else
+            if client_profile.nil? || client_profile.empty?
               credentials = Aws::SharedCredentials.new()
+            else
+              credentials = Aws::SharedCredentials.new(profile_name: client_profile)
             end
 
-            if !iam_role.empty?
+            if ! (iam_role.nil? || iam_role.empty?)
               role_credentials = Aws::AssumeRoleCredentials.new(
                 client: Aws::STS::Client.new(region: aws_region, credentials: credentials),
                 role_arn: iam_role,
