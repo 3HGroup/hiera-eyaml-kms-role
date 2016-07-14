@@ -49,11 +49,19 @@ class Hiera
             end
 
             if ! (iam_role.nil? || iam_role.empty?)
-              role_credentials = Aws::AssumeRoleCredentials.new(
-                client: Aws::STS::Client.new(region: aws_region, credentials: credentials),
-                role_arn: iam_role,
-                role_session_name: "hiera-secret"
-              )
+              if client_profile.nil? || client_profile.empty?
+                role_credentials = Aws::AssumeRoleCredentials.new(
+                  client: Aws::STS::Client.new(region: aws_region),
+                  role_arn: iam_role,
+                  role_session_name: "hiera-secret"
+                )
+              else
+                role_credentials = Aws::AssumeRoleCredentials.new(
+                  client: Aws::STS::Client.new(region: aws_region, credentials: credentials),
+                  role_arn: iam_role,
+                  role_session_name: "hiera-secret"
+                )
+              end
               credentials = role_credentials
             end
 
@@ -84,11 +92,19 @@ class Hiera
             end
 
             if ! (iam_role.nil? || iam_role.empty?)
-              role_credentials = Aws::AssumeRoleCredentials.new(
-                client: Aws::STS::Client.new(region: aws_region, credentials: credentials),
-                role_arn: iam_role,
-                role_session_name: "hiera-secret"
-              )
+              if client_profile.nil? || client_profile.empty?
+                role_credentials = Aws::AssumeRoleCredentials.new(
+                  client: Aws::STS::Client.new(region: aws_region),
+                  role_arn: iam_role,
+                  role_session_name: "hiera-secret"
+                )
+              else
+                role_credentials = Aws::AssumeRoleCredentials.new(
+                  client: Aws::STS::Client.new(region: aws_region, credentials: credentials),
+                  role_arn: iam_role,
+                  role_session_name: "hiera-secret"
+                )
+              end
               credentials = role_credentials
             end
 
