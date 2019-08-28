@@ -4,5 +4,5 @@ DIR=$(pwd)
 
 docker run -it --rm \
 -v $DIR:/app \
--v ~/.ssh:/root/.ssh \
+-v ~/.aws:/root/.aws \
 hiera-eyaml-kms
