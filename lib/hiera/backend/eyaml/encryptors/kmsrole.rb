@@ -9,7 +9,7 @@ class Hiera
     module Eyaml
       module Encryptors
 
-        class Kms < Encryptor
+        class Kmsrole < Encryptor
 
           self.options = {
             :key_id => {      :desc => "KMS Key ID",
@@ -27,7 +27,7 @@ class Hiera
           }
 
           VERSION = "0.2"
-          self.tag = "KMS"
+          self.tag = "KMSROLE"
 
           def self.encrypt plaintext
             # puts 'encrypting...'

@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |gem|
-  gem.name          = "hiera-eyaml-kms"
+  gem.name          = "hiera-eyaml-kmsrole"
   gem.version       = "0.2"
   gem.description   = "AWS KMS encryptor for use with hiera-eyaml"
   gem.summary       = "Encryption plugin for hiera-eyaml backend for Hiera"
