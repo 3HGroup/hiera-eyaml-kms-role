@@ -12,5 +12,4 @@ COPY *.gemspec ./
 
 RUN bundle install
 
-# ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
-CMD [ "/bin/bash" ]
+ENTRYPOINT [ "/bin/bash" ]

@@ -21,16 +21,16 @@ $ gem install hiera-eyaml
 You might need to install the aws-sdk for ruby, with the command:
 
 ```
-$ gem install aws-sdk
+$ gem install aws-sdk-kms
 ```
 
-This plugin uses aws-sdk version 2.
+This plugin uses aws-sdk version 3.
 
 Installation
 ------------
 
 ```
-$ gem install hiera-eyaml-kms
+$ gem install hiera-eyaml-kmsrole
 ```
 
 Then see [hiera-eyaml documentation](https://github.com/TomPoulton/hiera-eyaml) for how to use the eyaml tool to encrypt and use the 'KMS' encryption_type for values to be encrypted with this plugin.
@@ -38,12 +38,13 @@ Then see [hiera-eyaml documentation](https://github.com/TomPoulton/hiera-eyaml) 
 Configuration
 -------------
 
-This plugin adds 2 options to hiera-eyaml:
+This plugin adds 3 options to hiera-eyaml:
 
 ```
---kms-key-id=<s>            KMS Key ID  (default: )
---kms-aws-region=<s>        AWS Region  (default: ap-southeast-2)
---kms-aws-profile=<s>       AWS Profile (default: default)
+--kmsrole-key-id=<s>            KMS Key ID
+--kmsrole-aws-region=<s>        AWS Region
+--kmsrole-aws-profile=<s>       AWS Profile
+--kmsrole-iam-profile=<>        AWS IAM Role to assume
 ```
 
 To avoid passing CLI parameters every call to eyaml, you can create a config file to set the defaults.
